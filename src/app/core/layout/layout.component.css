@@ -1,0 +1,10 @@
+:host{
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  grid-template-rows: auto 1fr auto;
+}
+h1, footer{
+  text-align: center;
+}
