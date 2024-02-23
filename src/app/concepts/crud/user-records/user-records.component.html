@@ -1,1 +1,13 @@
-<p>user-records works!</p>
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      @for (col of columns; track col.key) {
+      <td>
+        {{ col.name }}
+      </td>
+      }
+      <td>Update</td>
+      <td>Edit</td>
+    </tr>
+  </thead>
+</table>
