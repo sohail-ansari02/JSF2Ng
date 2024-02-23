@@ -1,4 +1,4 @@
 export interface TableColumn {
-  key: string | ((field: any) => string);
+  key: string;
   name: string;
 }

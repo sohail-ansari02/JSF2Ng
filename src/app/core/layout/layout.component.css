@@ -1,10 +1,12 @@
-:host{
+:host {
   display: grid;
   height: 100vh;
   width: 100%;
   padding: 1rem;
   grid-template-rows: auto 1fr auto;
+  position: relative;
 }
-h1, footer{
+h1,
+footer {
   text-align: center;
 }

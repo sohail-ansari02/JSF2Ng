@@ -1,6 +1,7 @@
 <table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
+      <td> Index</td>
       @for (col of columns; track col.key) {
       <td>
         {{ col.name }}
@@ -10,4 +11,22 @@
       <td>Edit</td>
     </tr>
   </thead>
+  <tbody>
+    @for (user of data; track user.id; let index = $index) {
+    <tr>
+      <td>#{{ index }}</td>
+      @for (col of columns; track col.key) {
+      <td>
+        {{ user[col.key] }}
+      </td>
+      }
+      <td>
+        <button type="button" class="btn btn-secondary">Update</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-secondary">Edit</button>
+      </td>
+    </tr>
+    }
+  </tbody>
 </table>
