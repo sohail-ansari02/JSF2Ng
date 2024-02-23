@@ -3,6 +3,10 @@ import { UserData } from '../interfaces/user-data';
 
 export const COLUMNS: TableColumn[] = [
   {
+    name: 'ID',
+    key: 'id',
+  },
+  {
     name: 'User Name',
     key: 'name',
   },

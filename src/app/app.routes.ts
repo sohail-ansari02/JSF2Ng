@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { UserRecordsComponent } from './concepts/crud/user-records/user-records.component';
 import { LayoutComponent } from './core/layout/layout.component';
-import { USER_LIST } from './core/layout/routes_name';
+import { USERS } from './core/layout/routes_name';
+import { UserEditComponent } from './concepts/crud/user-edit/user-edit.component';
 
 export const routes: Routes = [
   {
@@ -10,15 +11,27 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: USER_LIST,
+        redirectTo: USERS,
         pathMatch: 'full',
       },
       {
-        path: USER_LIST,
-        component: UserRecordsComponent,
-        data: {
-          pageName: 'User Records',
-        },
+        path: USERS,
+        children: [
+          {
+            path: '',
+            component: UserRecordsComponent,
+            data: {
+              pageName: 'User Records',
+            },
+          },
+          {
+            path: ':id',
+            component: UserEditComponent,
+            data: {
+              pageName: 'User Edit/Update',
+            },
+          },
+        ],
       },
     ],
   },
